@@ -77,3 +77,29 @@ Agents are designed to be composable. The `Related Agents` section in each file 
 ## README Maintenance
 
 `README.md` contains the Quick Agent Finder tables (by role and by task) and the category overview. When adding or renaming agents, update the relevant table rows in README.md to keep it in sync.
+
+## Self-Hosting for Contributors
+
+`.claude/agents/` contains symlinks to the agents most useful when working on this repo itself:
+
+| Agent | Symlink target | Use while contributing |
+|---|---|---|
+| `project-shipper.md` | `project-management/project-shipper.md` | Reviewing PRs, cutting releases |
+| `trend-researcher.md` | `product/trend-researcher.md` | Deciding what new agents to add |
+| `feedback-synthesizer.md` | `product/feedback-synthesizer.md` | Processing community issues/requests |
+| `tool-evaluator.md` | `testing/tool-evaluator.md` | Quality-checking agent submissions |
+
+When adding a new agent that is broadly useful for repo work, add a symlink here too. Keep symlinks relative (e.g. `../../category/agent.md`) so they survive clones.
+
+## Extensibility
+
+The `.claude/` directory is structured to accommodate future additions beyond subagents:
+
+```
+.claude/
+├── agents/        # Subagents active when working on this repo
+├── skills/        # Future: reusable skill definitions
+└── fine-tuning/   # Future: training examples, preference data
+```
+
+Create these subdirectories as needed; no other changes to the repo structure are required.

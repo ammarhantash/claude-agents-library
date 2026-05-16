@@ -1,0 +1,1 @@
+../../product/trend-researcher.md
